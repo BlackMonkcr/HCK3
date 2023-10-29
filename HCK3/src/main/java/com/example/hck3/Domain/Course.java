@@ -1,6 +1,7 @@
 package com.example.hck3.Domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -29,12 +30,11 @@ public class Course {
 
     private int cycle;
 
-    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "course_type_id", referencedColumnName = "id")
     private CourseType courseType;
 
-    @JsonManagedReference
+    @JsonIgnore
     @OneToMany(mappedBy = "course")
     private Set<CourseAssessment> courseAssessments;
 

@@ -1,6 +1,7 @@
 package com.example.hck3.Domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -23,7 +24,7 @@ public class Periodo {
 
     private String code;
 
-    @JsonManagedReference
+    @JsonIgnore
     @OneToMany(mappedBy = "periodo")
     private Set<CourseAssessment> courseAssessments;
 

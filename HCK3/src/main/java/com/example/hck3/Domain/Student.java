@@ -1,5 +1,6 @@
 package com.example.hck3.Domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -24,7 +25,7 @@ public class Student {
 
     private String code;
 
-    @JsonManagedReference
+    @JsonIgnore
     @OneToMany(mappedBy = "student")
     private Set<CourseAssessmentDetails> coursesAssessmentDetails;
 

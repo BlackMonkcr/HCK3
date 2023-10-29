@@ -20,17 +20,14 @@ public class CourseAssessmentDetails {
 
     private String section;
 
-    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "student_id", referencedColumnName = "id")
     private Student student;
 
-    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "professor_id", referencedColumnName = "id")
     private Professor professor;
 
-    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "course_assessment_id", referencedColumnName = "id")
     private CourseAssessment courseAssessment;

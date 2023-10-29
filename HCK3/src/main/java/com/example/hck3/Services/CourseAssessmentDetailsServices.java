@@ -48,9 +48,6 @@ public class CourseAssessmentDetailsServices {
             return null;
         } else {
             CourseAssessmentDetails courseAssessmentDetailsUpdate = courseAssessmentDetailsOptional.get();
-            courseAssessmentDetailsUpdate.setCourseAssessment(courseAssessmentDetails.getCourseAssessment());
-            courseAssessmentDetailsUpdate.setStudent(courseAssessmentDetails.getStudent());
-            courseAssessmentDetailsUpdate.setProfessor(courseAssessmentDetails.getProfessor());
             courseAssessmentDetailsUpdate.setScore(courseAssessmentDetails.getScore());
             courseAssessmentDetailsUpdate.setSection(courseAssessmentDetails.getSection());
             courseAssessmentDetailsUpdate.setSectionGroup(courseAssessmentDetails.getSectionGroup());

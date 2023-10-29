@@ -1,6 +1,7 @@
 package com.example.hck3.Domain;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -21,12 +22,10 @@ public class CourseAssessment {
 
     private String title;
 
-    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "course_id", referencedColumnName = "id")
     private Course course;
 
-    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "periodo_id", referencedColumnName = "id")
     private Periodo periodo;
@@ -37,7 +36,7 @@ public class CourseAssessment {
 
     private String nomenclatura;
 
-    @JsonManagedReference
+    @JsonIgnore
     @OneToMany(mappedBy = "courseAssessment")
     private Set<CourseAssessmentDetails> coursesAssessmentDetails;
 
